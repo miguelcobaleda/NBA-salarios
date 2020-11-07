@@ -40,7 +40,7 @@ tuning_grid <- tibble::tibble(
   lambda_min = NA,
   lambda_1se = NA
 )
-knitr::(tuning_grid)
+knitr::kable(tuning_grid)
 
 for(i in seq_along(tuning_grid$alpha)) {
   
@@ -54,9 +54,9 @@ for(i in seq_along(tuning_grid$alpha)) {
   tuning_grid$lambda_1se[i] <- fit$lambda.1se
 }
 
-knitr::(tuning_grid)
+knitr::kable(tuning_grid)
 
-# elegiremos el modelo de menor lambda
+# elegiremos el modelo de menor mse, en este caso el modelo lasso de alpha 1
 
 
 
